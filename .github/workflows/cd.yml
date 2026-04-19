@@ -16,10 +16,10 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
+          password: ${{ secrets.PASSWORD }}
           script: |
             cd ~/project/forum-api
             git pull origin main
             npm ci
-            npm run migrate
+            NODE_ENV=production npm run migrate
             pm2 restart forum-api
