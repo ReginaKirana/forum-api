@@ -20,7 +20,7 @@ jobs:
           script: |
             cd ~/project/forum-api
             git pull origin main
-            npm ci
+            npm install
             NODE_ENV=production npm run migrate
             pm2 restart forum-api
 
