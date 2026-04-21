@@ -12,14 +12,22 @@ const createServer = async (container) => {
   // Middleware for parsing JSON
   app.use(express.json());
 
+  app.set('trust proxy', 1);
+
   // Rate Limiting
   const apiLimiter = rateLimit({
     windowMs: 1 * 60 * 1000, // 1 minute
     max: 90, // Limit each IP to 90 requests per windowMs
+    handler: (req, res, next, options) => {
+      res.status(options.statusCode).json({
+        status: 'fail',
+        message: options.message,
+      });
+    },
     message: 'Melebihi batas permintaan, silakan coba lagi nanti.',
   });
 
-  app.use('/threads', apiLimiter);
+  app.use(apiLimiter);
 
   // Register routes
   app.use('/users', users(container));
