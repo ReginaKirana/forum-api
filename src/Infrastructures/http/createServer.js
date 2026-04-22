@@ -4,7 +4,6 @@ import DomainErrorTranslator from '../../Commons/exceptions/DomainErrorTranslato
 import users from '../../Interfaces/http/api/users/index.js';
 import authentications from '../../Interfaces/http/api/authentications/index.js';
 import threads from '../../Interfaces/http/api/threads/index.js';
-import rateLimit from 'express-rate-limit';
 
 const createServer = async (container) => {
   const app = express();
@@ -14,24 +13,10 @@ const createServer = async (container) => {
 
   app.set('trust proxy', 1);
 
-  // Rate Limiting
-  const apiLimiter = rateLimit({
-    windowMs: 1 * 60 * 1000, // 1 minute
-    max: 90, // Limit each IP to 90 requests per windowMs
-    handler: (req, res, next, options) => {
-      res.status(options.statusCode).json({
-        status: 'fail',
-        message: options.message,
-      });
-    },
-    message: 'Melebihi batas permintaan, silakan coba lagi nanti.',
-  });
   // Register routes
   app.use('/users', users(container));
   app.use('/authentications', authentications(container));
-  
-  // Menerapkan Rate Limiter HANYA pada route /threads dan turunannya
-  app.use('/threads', apiLimiter, threads(container));
+  app.use('/threads', threads(container));
 
   // Global error handler
   // eslint-disable-next-line no-unused-vars
