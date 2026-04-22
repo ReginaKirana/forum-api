@@ -1,9 +1,0 @@
-#!/usr/bin/expect -f
-set password [lindex $argv 0]
-spawn ssh -o StrictHostKeyChecking=no root@139.180.215.230
-expect "*password:*"
-send "$password\r"
-expect "*#*"
-send "cat /etc/nginx/sites-available/forum-api\r"
-expect "*#*"
-send "exit\r"
