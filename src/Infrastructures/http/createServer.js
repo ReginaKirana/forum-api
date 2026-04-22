@@ -26,13 +26,12 @@ const createServer = async (container) => {
     },
     message: 'Melebihi batas permintaan, silakan coba lagi nanti.',
   });
-
-  app.use(apiLimiter);
-
   // Register routes
   app.use('/users', users(container));
   app.use('/authentications', authentications(container));
-  app.use('/threads', threads(container));
+  
+  // Menerapkan Rate Limiter HANYA pada route /threads dan turunannya
+  app.use('/threads', apiLimiter, threads(container));
 
   // Global error handler
   // eslint-disable-next-line no-unused-vars

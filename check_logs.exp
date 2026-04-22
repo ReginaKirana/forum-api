@@ -1,0 +1,13 @@
+#!/usr/bin/expect -f
+set password [lindex $argv 0]
+spawn ssh -o StrictHostKeyChecking=no root@139.180.215.230
+expect "*password:*"
+send "$password\r"
+expect "*#*"
+send "pm2 logs forum-api --lines 100 --nostream\r"
+expect "*#*"
+send "tail -n 50 /var/log/nginx/error.log\r"
+expect "*#*"
+send "tail -n 50 /var/log/nginx/access.log\r"
+expect "*#*"
+send "exit\r"
