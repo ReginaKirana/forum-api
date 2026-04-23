@@ -1,6 +1,6 @@
 # Forum API Starter Project 🚀
 
-Welcome to the **Forum API Starter Project** repository! This project is a RESTful API implementation for a discussion forum application, built using **Clean Architecture** and **Test-Driven Development (TDD)**. This project was developed as a final submission for the **Menjadi Back-End Developer Expert** course on [Dicoding](https://www.dicoding.com/).
+Welcome to the **Forum API Starter Project** repository! This project is a RESTful API implementation for a discussion forum application, built using **Clean Architecture** and **Test-Driven Development (TDD)**. This project was developed as a final submission for the **Becoming a Back-End Developer Expert** course on [Dicoding](https://www.dicoding.com/).
 
 ---
 
