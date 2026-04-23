@@ -1,5 +1,7 @@
 # Forum API Starter Project 🚀
 
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) ![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens) ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white) ![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white) ![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white) ![Vultr](https://img.shields.io/badge/Vultr-007BFC?style=for-the-badge&logo=vultr&logoColor=white)
+
 Welcome to the **Forum API Starter Project** repository! This project is a RESTful API implementation for a discussion forum application, built using **Clean Architecture** and **Test-Driven Development (TDD)**. This project was developed as a final submission for the **Becoming a Back-End Developer Expert** course on [Dicoding](https://www.dicoding.com/).
 
 ---
@@ -16,7 +18,7 @@ Welcome to the **Forum API Starter Project** repository! This project is a RESTf
 - **Nginx Reverse Proxy:** Configured with Nginx for performance and security (HTTPS).
 
 ## 🔗 Live API URL
-The API is currently deployed and can be accessed at:
+The API is currently deployed on a Vultr cloud server and can be accessed at:
 **`https://139.180.215.230.sslip.io`**
 
 *(Note: You can use this Base URL in your Postman environment to test the live endpoints.)*
@@ -27,7 +29,7 @@ The API is currently deployed and can be accessed at:
 - **Security:** `bcrypt`, `jsonwebtoken`, `express-rate-limit`
 - **Testing:** Vitest, Supertest (Coverage > 80%)
 - **Linter:** ESLint (with Dicoding Academy standard config)
-- **Deployment:** Nginx, PM2 (recommended for production)
+- **Deployment:** Vultr (Cloud Server), Nginx, PM2 (recommended for production)
 
 ---
 
