@@ -28,7 +28,7 @@ The API is currently deployed on a Vultr cloud server and can be accessed at:
 - **Database:** PostgreSQL, `pg`, `node-pg-migrate`
 - **Security:** `bcrypt`, `jsonwebtoken`, `express-rate-limit`
 - **Testing:** Vitest, Supertest (Coverage > 80%)
-- **Linter:** ESLint (with Dicoding Academy standard config)
+- **Linter:** ESLint 
 - **Deployment:** Vultr (Cloud Server), Nginx, PM2 
 
 ---
