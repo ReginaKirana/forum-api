@@ -29,7 +29,7 @@ The API is currently deployed on a Vultr cloud server and can be accessed at:
 - **Security:** `bcrypt`, `jsonwebtoken`, `express-rate-limit`
 - **Testing:** Vitest, Supertest (Coverage > 80%)
 - **Linter:** ESLint (with Dicoding Academy standard config)
-- **Deployment:** Vultr (Cloud Server), Nginx, PM2 (recommended for production)
+- **Deployment:** Vultr (Cloud Server), Nginx, PM2 
 
 ---
 
